@@ -1,0 +1,23 @@
+{
+  "name": "sofoque",
+  "version": "0.0.1",
+  "description": "Sofoque (/sɔːˈfɔː.kɛ/) a profiler middleware tospot performance suffocating conditions in express/connect applications",
+  "main": "./lib/sofoque.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xenomuta/sofoque.git"
+  },
+  "scripts": {
+    "prepublish": "coffee -o ./ lib ./src/sofoque.coffee"
+  },
+  "keywords": [
+    "express",
+    "connect",
+    "profiler",
+    "cpu",
+    "debug",
+    "performance"
+  ],
+  "author": "Rilke Petrosky Ulloa (XenoMuta)",
+  "license": "GPLv3"
+}
