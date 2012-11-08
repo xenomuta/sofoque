@@ -4,6 +4,10 @@ Sofoque (/sɔːˈfɔː.kɛ/) a profiler middleware tospot performance suffocatin
 os = require('os')
 fs = require('fs')
 
+if ['linux', 'solaris'].indexOf(os.platform()) is -1
+  class UnsupportedPlatform extends Error
+  throw new UnsupportedPlatform "Only 'linux' and 'solaris' platforms are supported, but you are running '#{os.platform()}'."
+
 # Configuration
 conf = {}
 
@@ -53,7 +57,7 @@ sofoqueMiddleware = (req, res, next) ->
       memoryUsage: process.memoryUsage()
 
     # call the callback function with profile data
-    conf.callback {Sofoque: res.sofoque}    
+    conf.callback {Sofoque: res.sofoque}
 
   # Prepare profile data
   res.sofoque =
@@ -69,6 +73,8 @@ sofoqueMiddleware = (req, res, next) ->
   # Move on with your life
   next()
 
-module.exports = (callback=defaultCallback) ->  
-  conf = {callback}
-  sofoqueMiddleware
+module.exports =
+  getCPUload: -> currentCPULoad
+  middleware: (callback=defaultCallback) ->
+    conf = {callback}
+    sofoqueMiddleware

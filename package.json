@@ -1,6 +1,6 @@
 {
   "name": "sofoque",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sofoque (/sɔːˈfɔː.kɛ/) a profiler middleware tospot performance suffocating conditions in express/connect applications",
   "main": "./lib/sofoque.js",
   "repository": {
