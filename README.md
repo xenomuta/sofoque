@@ -1,5 +1,7 @@
 ## Sofoque
-Sofoque (/sɔːˈfɔː.kɛ/): profiler middleware to spot CPU suffocating conditions in [Express]/[Connect] applications
+_Sofoque (/sɔːˈfɔː.kɛ/): profiler middleware to spot CPU suffocating conditions in [Express]/[Connect] applications_
+
+![Sofoque](https://github.com/xenomuta/sofoque/raw/master/dist/fail.jpeg "Sofoque")
 
 ### Install
     npm install sofoque
